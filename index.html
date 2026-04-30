@@ -1,7 +1,130 @@
-<html>
-  <head>
-    <title>
-      YS Luxury Couture
-    </title>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YS Luxury Couture - Opening Soon</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #000000, #1a1a1a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 30px;
+    }
+
+    .coming {
+      font-size: 2rem;
+      color: gold;
+      animation: glow 2s infinite alternate;
+    }
+
+    .line {
+      width: 80px;
+      height: 2px;
+      background: gold;
+      margin: 20px auto;
+      animation: expand 2s ease-in-out infinite alternate;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px gold;
+      }
+      to {
+        text-shadow: 0 0 20px gold, 0 0 30px gold;
+      }
+    }
+
+    @keyframes expand {
+      from {
+        width: 50px;
+      }
+      to {
+        width: 120px;
+      }
+    }
+
+    /* Background animation dots */
+    .dots span {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: gold;
+      border-radius: 50%;
+      animation: move 10s linear infinite;
+    }
+
+    @keyframes move {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>YS Luxury Couture</h1>
+    <div class="line"></div>
+    <h2>Elegance is Coming</h2>
+    <div class="coming">Opening Soon</div>
+  </div>
+
+  <!-- Animated dots -->
+  <div class="dots">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:30%; animation-delay:2s;"></span>
+    <span style="left:50%; animation-delay:4s;"></span>
+    <span style="left:70%; animation-delay:1s;"></span>
+    <span style="left:90%; animation-delay:3s;"></span>
+  </div>
+
+</body>
 </html>
