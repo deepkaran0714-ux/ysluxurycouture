@@ -1,9 +1,11 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YS Luxury Couture - Opening Soon....</title>
+  <meta name="description" content="YS Luxury Couture - Coming Soon. Premium luxury fashion opening soon.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>YS Luxury Couture - Opening Soon</title>
 
   <style>
     * {
@@ -26,6 +28,8 @@
     .container {
       text-align: center;
       animation: fadeIn 2s ease-in-out;
+      z-index: 10;
+      position: relative;
     }
 
     h1 {
@@ -33,26 +37,101 @@
       letter-spacing: 2px;
       margin-bottom: 10px;
       color: #fff;
+      font-weight: 700;
     }
 
     h2 {
       font-size: 1.2rem;
       color: #ccc;
       margin-bottom: 30px;
+      font-weight: 400;
     }
 
     .coming {
       font-size: 2rem;
-      color: gold;
+      color: #d4af37;
       animation: glow 2s infinite alternate;
+      margin-bottom: 40px;
+      font-weight: 600;
     }
 
     .line {
       width: 80px;
       height: 2px;
-      background: gold;
+      background: #d4af37;
       margin: 20px auto;
       animation: expand 2s ease-in-out infinite alternate;
+    }
+
+    /* Signup Form Styling */
+    .signup-section {
+      margin-top: 50px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .signup-section h3 {
+      font-size: 1rem;
+      color: #d4af37;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .email-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #d4af37;
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .email-form input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .email-form input:focus {
+      outline: none;
+      background: rgba(212, 175, 55, 0.1);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .email-form button {
+      padding: 12px 30px;
+      background: #d4af37;
+      color: #000;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .email-form button:hover {
+      background: #e6c745;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    .email-form button:active {
+      transform: translateY(0);
     }
 
     /* Animations */
@@ -69,10 +148,10 @@
 
     @keyframes glow {
       from {
-        text-shadow: 0 0 5px gold;
+        text-shadow: 0 0 5px #d4af37;
       }
       to {
-        text-shadow: 0 0 20px gold, 0 0 30px gold;
+        text-shadow: 0 0 20px #d4af37, 0 0 30px #d4af37;
       }
     }
 
@@ -86,11 +165,17 @@
     }
 
     /* Background animation dots */
+    .dots {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
     .dots span {
       position: absolute;
       width: 5px;
       height: 5px;
-      background: gold;
+      background: #d4af37;
       border-radius: 50%;
       animation: move 10s linear infinite;
     }
@@ -105,6 +190,58 @@
         opacity: 0;
       }
     }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1rem;
+      }
+
+      .coming {
+        font-size: 1.5rem;
+      }
+
+      .email-form {
+        flex-direction: column;
+      }
+
+      .email-form input,
+      .email-form button {
+        width: 100%;
+      }
+
+      .signup-section {
+        margin-top: 30px;
+        padding-top: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        font-size: 0.9rem;
+      }
+
+      .coming {
+        font-size: 1.2rem;
+      }
+
+      .line {
+        margin: 15px auto;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+    }
   </style>
 </head>
 
@@ -115,6 +252,19 @@
     <div class="line"></div>
     <h2>Elegance is Coming</h2>
     <div class="coming">Opening Soon</div>
+
+    <div class="signup-section">
+      <h3>Be the First to Know</h3>
+      <form class="email-form" onsubmit="handleSubmit(event)">
+        <input 
+          type="email" 
+          placeholder="Enter your email" 
+          required 
+          aria-label="Email address"
+        >
+        <button type="submit">Notify Me</button>
+      </form>
+    </div>
   </div>
 
   <!-- Animated dots -->
@@ -126,6 +276,16 @@
     <span style="left:90%; animation-delay:3s;"></span>
   </div>
 
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const email = event.target.querySelector('input[type="email"]').value;
+      // You can connect this to a backend service or email service
+      console.log('Email subscribed:', email);
+      alert('Thank you! We\'ll notify you soon.');
+      event.target.reset();
+    }
+  </script>
+
 </body>
-</html>
 </html>
